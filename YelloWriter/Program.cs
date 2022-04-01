@@ -1,21 +1,18 @@
 ﻿using Microsoft.AspNetCore.SignalR.Client;
 
-namespace YelloWriter
+namespace YelloWriter;
+
+class Program
 {
-    class Program
+    public static void Main(string[] args)
     {
-        public static void Main(string[] args)
-        {
-            var connection = new HubConnectionBuilder().WithUrl("http://localhost:5001/chatHub").Build();
+        var connection = new HubConnectionBuilder().WithUrl("http://localhost:5001/chatHub").Build();
 
-            connection.StartAsync().Wait();
-            connection.InvokeCoreAsync("SendMessage", args: new[] {"vicrenlopez", "Hello"});
-            connection.On("ReceiveMessage", (string userName, string message) =>
-            {
-                Console.WriteLine(userName + ':' + message);
-            });
+        connection.StartAsync().Wait();
+        connection.InvokeCoreAsync("SendMessage", args: new[] {"vicrenlopez", "Hello"});
+        connection.On("ReceiveMessage",
+            (string userName, string message) => { Console.WriteLine(userName + ':' + message); });
 
-            Console.ReadKey();
-        }
+        Console.ReadKey();
     }
 }

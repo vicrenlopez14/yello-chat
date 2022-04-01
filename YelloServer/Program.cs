@@ -1,8 +1,9 @@
-﻿namespace YelloReader;
+﻿namespace YelloServer;
 
 class Program
 {
     public static void Main(string[] args)
     {
+        
     }
 }
