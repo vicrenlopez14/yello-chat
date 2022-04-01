@@ -6,10 +6,12 @@ public class Message : AuditableEntity
 
     public int Color { get; }
 
+    public string Room { get; }
 
-    public Message(string content, int color)
+    public Message(string content, int color, string room)
     {
         Content = content;
         Color = color;
+        Room = room;
     }
 }
