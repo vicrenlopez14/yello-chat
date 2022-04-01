@@ -1,8 +1,9 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Infrastructure.Services.Hubs;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Infrastructure;
+namespace YelloServer;
 
 public class Startup
 {
@@ -21,9 +22,6 @@ public class Startup
     public void Configure(IApplicationBuilder app)
     {
         app.UseRouting();
-        app.UseEndpoints(endpoints =>
-        {
-            endpoints.MapHub<ChatHub>("/chathub");
-        });
+        app.UseEndpoints(endpoints => { endpoints.MapHub<ChatHub>("/chathub"); });
     }
 }

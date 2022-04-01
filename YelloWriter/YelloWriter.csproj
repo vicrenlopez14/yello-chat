@@ -12,4 +12,8 @@
       <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="7.0.0-preview.2.22153.2" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Domain\Domain.csproj" />
+    </ItemGroup>
+
 </Project>

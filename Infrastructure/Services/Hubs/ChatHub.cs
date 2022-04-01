@@ -13,7 +13,7 @@ namespace Infrastructure.Services.Hubs
             // Serialize to extract group name
             var deserialized = new JsonMessageSerializer().Deserialize(message);
 
-            await Clients.Group(deserialized!.Room).SendAsync("receiveMessage", message);
+            await Clients.Group(deserialized!.Room).SendAsync("ReceiveMessage", message);
         }
 
         [HubMethodName("JoinToRoom")]
@@ -24,7 +24,7 @@ namespace Infrastructure.Services.Hubs
             var newMessage = new Message($"{userName} has joined the room.", 11, groupName, DateTimeService.Now,
                 ">>>YELLO-ADMIN<<<");
 
-            await Clients.Group(groupName).SendAsync("receiveMessage", newMessage);
+            await Clients.Group(groupName).SendAsync("ReceiveMessage", newMessage);
         }
 
         [HubMethodName("JoinFromRoom")]
@@ -35,7 +35,7 @@ namespace Infrastructure.Services.Hubs
             var newMessage = new Message($"{userName} has left the room.", 11, groupName, DateTimeService.Now,
                 ">>>YELLO-ADMIN<<<");
 
-            await Clients.Group(groupName).SendAsync("receiveMessage", newMessage);
+            await Clients.Group(groupName).SendAsync("ReceiveMessage", newMessage);
         }
     }
 }
