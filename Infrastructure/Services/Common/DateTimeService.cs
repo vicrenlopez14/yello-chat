@@ -4,5 +4,6 @@ namespace Infrastructure.Services.Common;
 
 public class DateTimeService : IDateTime
 {
-    public DateTime Now => DateTime.Now;
+    public static DateTime Now => DateTime.Now;
+    
 }
