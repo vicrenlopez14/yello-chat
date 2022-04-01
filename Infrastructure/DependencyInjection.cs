@@ -5,7 +5,7 @@ namespace Infrastructure;
 
 public class DependencyInjection
 {
-    static void Init(string[] args)
+    public void Init(string[] args)
     {
         CreateWebHostBuilder(args).Build().Run();
     }
