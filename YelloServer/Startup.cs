@@ -1,4 +1,5 @@
-﻿using Infrastructure.Services.Hubs;
+﻿using Domain.Entities;
+using Infrastructure.Services.Hubs;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,6 +23,6 @@ public class Startup
     public void Configure(IApplicationBuilder app)
     {
         app.UseRouting();
-        app.UseEndpoints(endpoints => { endpoints.MapHub<ChatHub>("/chathub"); });
+        app.UseEndpoints(endpoints => { endpoints.MapHub<ChatHub>($"/{ServerRoutes.CHAT_ROOMS}"); });
     }
 }

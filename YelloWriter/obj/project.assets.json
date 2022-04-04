@@ -283,6 +283,19 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
+      "Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Application.dll": {}
+        }
+      },
       "Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -292,6 +305,23 @@
         "runtime": {
           "bin/placeholder/Domain.dll": {}
         }
+      },
+      "Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Application": "1.0.0",
+          "Microsoft.AspNetCore.SignalR.Client": "7.0.0-preview.2.22153.2"
+        },
+        "compile": {
+          "bin/placeholder/Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Infrastructure.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -850,15 +880,26 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Application/1.0.0": {
+      "type": "project",
+      "path": "../Application/Application.csproj",
+      "msbuildProject": "../Application/Application.csproj"
+    },
     "Domain/1.0.0": {
       "type": "project",
       "path": "../Domain/Domain.csproj",
       "msbuildProject": "../Domain/Domain.csproj"
+    },
+    "Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../Infrastructure/Infrastructure.csproj",
+      "msbuildProject": "../Infrastructure/Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "Domain >= 1.0.0",
+      "Infrastructure >= 1.0.0",
       "Microsoft.AspNetCore.SignalR.Client >= 7.0.0-preview.2.22153.2"
     ]
   },
@@ -891,6 +932,9 @@
           "projectReferences": {
             "C:\\Users\\vicre\\Documents\\Ricaldone\\Software\\Modulo-1\\Yello\\YelloChat\\Domain\\Domain.csproj": {
               "projectPath": "C:\\Users\\vicre\\Documents\\Ricaldone\\Software\\Modulo-1\\Yello\\YelloChat\\Domain\\Domain.csproj"
+            },
+            "C:\\Users\\vicre\\Documents\\Ricaldone\\Software\\Modulo-1\\Yello\\YelloChat\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\vicre\\Documents\\Ricaldone\\Software\\Modulo-1\\Yello\\YelloChat\\Infrastructure\\Infrastructure.csproj"
             }
           }
         }
@@ -921,6 +965,9 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }

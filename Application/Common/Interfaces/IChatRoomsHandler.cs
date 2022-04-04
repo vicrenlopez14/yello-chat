@@ -4,7 +4,7 @@ public interface IChatRoomsHandler
 {
     public Task SendMessage(string message);
 
-    public Task AddToGroup(string groupName, string user);
+    public Task AddToRoom(string groupName, string user);
 
-    public Task RemoveFromGroup(string groupName, string user);
+    public Task RemoveFromRoom(string groupName, string user);
 }

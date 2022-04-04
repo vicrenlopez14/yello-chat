@@ -17,7 +17,7 @@ namespace Infrastructure.Services.Hubs
         }
 
         [HubMethodName("JoinToRoom")]
-        public async Task AddToGroup(string groupName, string userName)
+        public async Task AddToRoom(string groupName, string userName)
         {
             await Groups.AddToGroupAsync(Context.ConnectionId, groupName);
 
@@ -27,8 +27,8 @@ namespace Infrastructure.Services.Hubs
             await Clients.Group(groupName).SendAsync("ReceiveMessage", newMessage);
         }
 
-        [HubMethodName("JoinFromRoom")]
-        public async Task RemoveFromGroup(string groupName, string userName)
+        [HubMethodName("RemoveFromRoom")]
+        public async Task RemoveFromRoom(string groupName, string userName)
         {
             await Groups.RemoveFromGroupAsync(Context.ConnectionId, groupName);
 
