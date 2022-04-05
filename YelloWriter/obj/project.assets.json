@@ -195,6 +195,15 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
+      "RandomNameGenerator/1.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/RandomNameGenerator.dll": {}
+        },
+        "runtime": {
+          "lib/RandomNameGenerator.dll": {}
+        }
+      },
       "System.Diagnostics.DiagnosticSource/7.0.0-preview.2.22152.2": {
         "type": "package",
         "dependencies": {
@@ -683,6 +692,18 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "RandomNameGenerator/1.0.4": {
+      "sha512": "uol9L79Sh5CTvy2BCI8hRVYFF3AK6QQoBSCRCLz291Pt8UQPc1hndKKVTjDwKzf8Z16vze4v9//84DOlpEY2Gg==",
+      "type": "package",
+      "path": "randomnamegenerator/1.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/RandomNameGenerator.dll",
+        "randomnamegenerator.1.0.4.nupkg.sha512",
+        "randomnamegenerator.nuspec"
+      ]
+    },
     "System.Diagnostics.DiagnosticSource/7.0.0-preview.2.22152.2": {
       "sha512": "GeCysKPyS8QMS7pxiV/FLWvFFJViqWkkhBKImXtgaloJ0y1s+GHx3PvNDSBMO4o2s32cyhYoshowkge5bRM0Qw==",
       "type": "package",
@@ -900,7 +921,8 @@
     "net6.0": [
       "Domain >= 1.0.0",
       "Infrastructure >= 1.0.0",
-      "Microsoft.AspNetCore.SignalR.Client >= 7.0.0-preview.2.22153.2"
+      "Microsoft.AspNetCore.SignalR.Client >= 7.0.0-preview.2.22153.2",
+      "RandomNameGenerator >= 1.0.4"
     ]
   },
   "packageFolders": {
@@ -952,6 +974,10 @@
           "Microsoft.AspNetCore.SignalR.Client": {
             "target": "Package",
             "version": "[7.0.0-preview.2.22153.2, )"
+          },
+          "RandomNameGenerator": {
+            "target": "Package",
+            "version": "[1.0.4, )"
           }
         },
         "imports": [
@@ -975,5 +1001,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'RandomNameGenerator 1.0.4' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "RandomNameGenerator",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

@@ -10,13 +10,18 @@ class Program
 {
     public static async Task Main(string[] args)
     {
+        // RODRIGO-MADE
+
+        // Room data input
+        Console.Write("Ingrese el nombre de la sala a la que quiere unirse (\"general\" por defecto): ");
+        string roomName = Console.ReadLine() ?? "general";
+
         var messager = new ConnectionHubMessager();
 
-        await messager.JoinToRoom("vicrenlopez", "cuarto");
+        await messager.JoinToRoom("reader", roomName);
 
-        var connection = messager.Connection;
-
-        connection.On(MessageMethod.RECEIVE_MESSAGE,
+        Console.WriteLine("Conectado. Pulse enter para salir.");
+        messager.Connection.On(MessageMethod.RECEIVE_MESSAGE,
             (string message) =>
             {
                 // SUSAN MADE

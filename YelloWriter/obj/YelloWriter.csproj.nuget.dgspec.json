@@ -229,6 +229,10 @@
             "Microsoft.AspNetCore.SignalR.Client": {
               "target": "Package",
               "version": "[7.0.0-preview.2.22153.2, )"
+            },
+            "RandomNameGenerator": {
+              "target": "Package",
+              "version": "[1.0.4, )"
             }
           },
           "imports": [
