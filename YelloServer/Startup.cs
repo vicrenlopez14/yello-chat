@@ -13,14 +13,14 @@ public class Startup
         Configuration = configuration;
     }
 
-    public IConfiguration Configuration { get; }
+    private IConfiguration Configuration { get; }
 
-    public void ConfigureServices(IServiceCollection services)
+    private void ConfigureServices(IServiceCollection services)
     {
         services.AddSignalR();
     }
 
-    public void Configure(IApplicationBuilder app)
+    private void Configure(IApplicationBuilder app)
     {
         app.UseRouting();
         app.UseEndpoints(endpoints => { endpoints.MapHub<ChatHub>($"/{ServerRoutes.CHAT_ROOMS}"); });
