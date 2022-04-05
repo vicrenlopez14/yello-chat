@@ -31,19 +31,23 @@ class Program
         string roomName)
     {
         string message;
-        bool exit = false;
 
         Console.WriteLine("Para salir del programa escribe la letra \"x\" y envía...");
 
-        do
+        while (true)
         {
+            Console.Clear();
             write_it:
             // Typing the message
             Console.Write("Escriba su mensaje: ");
             message = Console.ReadLine();
 
             // Exit verification
-            exit = message == "x";
+            if (message == "x")
+            {
+                await messager.ExitRoom(username, roomName);
+                Environment.Exit(0);
+            }
 
             if (message == "")
             {
@@ -56,10 +60,9 @@ class Program
                 username);
 
             // Message sending
-            await messager.SendMessage(newMessage);
-        } while (exit == false);
-
-        await messager.ExitRoom(username, roomName);
+            messager.SendMessage(newMessage);
+        }
+        // ReSharper disable once FunctionNeverReturns
     }
 
     // REBECA-MADE
@@ -88,7 +91,7 @@ class Program
         Console.WriteLine("13. Color amarillo. ");
 
         color_input:
-        Console.WriteLine("Opción: ");
+        Console.Write("Opción: ");
 
         int color = int.Parse(Console.ReadLine() ?? "1");
 

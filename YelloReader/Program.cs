@@ -21,7 +21,7 @@ class Program
         await messager.JoinToRoom("reader", roomName);
 
         Console.WriteLine("Conectado. Pulse enter para salir.");
-        messager.Connection.On(MessageMethod.RECEIVE_MESSAGE,
+        messager.Hub.On(MessageMethod.RECEIVE_MESSAGE,
             (string message) =>
             {
                 // SUSAN MADE
