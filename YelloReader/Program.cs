@@ -1,4 +1,5 @@
 ﻿using System.Text.Json;
+using Domain.Common;
 using Domain.Entities;
 using Infrastructure.Services.Hubs;
 using Microsoft.AspNetCore.SignalR.Client;
@@ -7,15 +8,26 @@ namespace YelloReader;
 
 class Program
 {
-    public static void Main(string[] args)
+    public static async Task Main(string[] args)
     {
-        var connection = ConnectionHubProvider.EstablishConnection();
+        var messager = new ConnectionHubMessager();
 
-        connection.On("ReceiveMessage",
+        await messager.JoinToRoom("vicrenlopez", "cuarto");
+
+        var connection = messager.Connection;
+
+        connection.On(MessageMethod.RECEIVE_MESSAGE,
             (string message) =>
             {
+                // SUSAN MADE
                 var deserializedMessage = JsonSerializer.Deserialize<Message>(message);
-                Console.WriteLine(deserializedMessage!.CreatedBy + ':' + deserializedMessage.Content);
+
+                Console.ForegroundColor = ColorMappings.CodeToConsole[deserializedMessage!.Color];
+
+                Console.WriteLine(deserializedMessage.Created.ToString("hh:mm tt") + "~ " +
+                                  deserializedMessage.CreatedBy + ":" + " " + deserializedMessage.Content);
             });
+
+        Console.ReadKey();
     }
 }

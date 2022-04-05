@@ -2,7 +2,7 @@
 
 public class ColorMappings
 {
-    public Dictionary<ConsoleColor, int> ConsoleToCode = new Dictionary<ConsoleColor, int>
+    public static Dictionary<ConsoleColor, int> ConsoleToCode = new Dictionary<ConsoleColor, int>
     {
         {ConsoleColor.Blue, 1},
         {ConsoleColor.Cyan, 2},
@@ -19,7 +19,7 @@ public class ColorMappings
         {ConsoleColor.Yellow, 13},
     };
 
-    public Dictionary<int, ConsoleColor> CodeToConsole = new Dictionary<int, ConsoleColor>
+    public static Dictionary<int, ConsoleColor> CodeToConsole = new Dictionary<int, ConsoleColor>
     {
         {1, ConsoleColor.Blue},
         {2, ConsoleColor.Cyan},

@@ -1,7 +1,5 @@
-﻿using System.Text.Json;
-using Domain.Entities;
+﻿using Domain.Entities;
 using Infrastructure.Services.Hubs;
-using Microsoft.AspNetCore.SignalR.Client;
 
 namespace YelloWriter;
 
@@ -9,9 +7,25 @@ class Program
 {
     public static void Main(string[] args)
     {
-        var connection = ConnectionHubProvider.EstablishConnection();
-        var newMessage = new Message("Helouda", 2, "sds234", DateTime.Now, "vicrenlopez");
-        ConnectionHubProvider.SendMessage(connection, newMessage);
+        var messager = new ConnectionHubMessager();
+
+        messager.JoinToRoom("vicrenlopez", "cuarto");
+        
+        bool exit = false;
+        while (exit == false)
+        {
+            messager.SendMessage(new Message("ola k ase", 2, "cuarto", DateTime.Now, "vicrenlopez"));
+            Console.WriteLine("Mensaje enviado");
+
+            var key = Console.ReadKey();
+
+            if (key.Key == ConsoleKey.A)
+            {
+                exit = true;
+            }
+        }
+
+        messager.ExitRoom("vicrenlopez", "cuarto");
 
         Console.ReadKey();
     }
