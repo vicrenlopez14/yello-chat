@@ -41,3 +41,4 @@ C:\Users\vicre\Documents\Ricaldone\Software\Modulo-1\Yello\YelloChat\YelloWriter
 C:\Users\vicre\Documents\Ricaldone\Software\Modulo-1\Yello\YelloChat\YelloWriter\bin\Debug\net6.0\Infrastructure.dll
 C:\Users\vicre\Documents\Ricaldone\Software\Modulo-1\Yello\YelloChat\YelloWriter\bin\Debug\net6.0\Infrastructure.pdb
 C:\Users\vicre\Documents\Ricaldone\Software\Modulo-1\Yello\YelloChat\YelloWriter\bin\Debug\net6.0\Application.pdb
+C:\Users\vicre\Documents\Ricaldone\Software\Modulo-1\Yello\YelloChat\YelloWriter\bin\Debug\net6.0\RandomNameGenerator.dll

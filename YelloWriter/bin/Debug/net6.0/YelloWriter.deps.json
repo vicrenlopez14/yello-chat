@@ -10,7 +10,8 @@
         "dependencies": {
           "Domain": "1.0.0",
           "Infrastructure": "1.0.0",
-          "Microsoft.AspNetCore.SignalR.Client": "7.0.0-preview.2.22153.2"
+          "Microsoft.AspNetCore.SignalR.Client": "7.0.0-preview.2.22153.2",
+          "RandomNameGenerator": "1.0.4"
         },
         "runtime": {
           "YelloWriter.dll": {}
@@ -174,6 +175,14 @@
           "lib/net6.0/Microsoft.Extensions.Primitives.dll": {
             "assemblyVersion": "7.0.0.0",
             "fileVersion": "7.0.22.15202"
+          }
+        }
+      },
+      "RandomNameGenerator/1.0.4": {
+        "runtime": {
+          "lib/RandomNameGenerator.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       },
@@ -370,6 +379,13 @@
       "sha512": "sha512-QwF3+H/IkrnHeXGjTf2p33SvySxLPp1afERXZim+cOs9rrCFhLTPg3XQqxmQgBfB2yGXtyuMuaxEJanWHNC8JQ==",
       "path": "microsoft.extensions.primitives/7.0.0-preview.2.22152.2",
       "hashPath": "microsoft.extensions.primitives.7.0.0-preview.2.22152.2.nupkg.sha512"
+    },
+    "RandomNameGenerator/1.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uol9L79Sh5CTvy2BCI8hRVYFF3AK6QQoBSCRCLz291Pt8UQPc1hndKKVTjDwKzf8Z16vze4v9//84DOlpEY2Gg==",
+      "path": "randomnamegenerator/1.0.4",
+      "hashPath": "randomnamegenerator.1.0.4.nupkg.sha512"
     },
     "System.Diagnostics.DiagnosticSource/7.0.0-preview.2.22152.2": {
       "type": "package",

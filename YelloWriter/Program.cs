@@ -66,10 +66,10 @@ class Program
     static (String, ConsoleColor) GetUsernameAndColor()
     {
         // Username input
-        Console.WriteLine("Ingrese el nombre de usuario con el que desea identificarse: ");
+        Console.Write("Ingrese el nombre de usuario con el que desea identificarse: ");
         string user = Console.ReadLine() ?? NameGenerator.Generate(Gender.Male);
 
-        Console.WriteLine("Su nombre de usuario es: " + user);
+        Console.Write("Su nombre de usuario es: " + user);
 
         // Color input
         Console.WriteLine("Elija una opción para el color de sus mensajes: ");
