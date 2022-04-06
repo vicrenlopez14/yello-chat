@@ -11,7 +11,7 @@ public class ConnectionHubMessager : IConnectionProvider
 
     public ConnectionHubMessager()
     {
-        Hub = new HubConnectionBuilder().WithUrl($"http://localhost:5000/{ServerRoutes.CHAT_ROOMS}")
+        Hub = new HubConnectionBuilder().WithUrl($"{ServerRoutes.SERVER_HOST}/{ServerRoutes.CHAT_ROOMS}")
             .Build();
         
         EstablishConnection();
