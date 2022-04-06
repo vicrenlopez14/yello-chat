@@ -11,5 +11,6 @@ class Program
     }
 
     private static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-        WebHost.CreateDefaultBuilder(args).UseStartup<Startup>();
+        WebHost.CreateDefaultBuilder(args).UseStartup<Startup>()
+            .UseUrls("http://*:" + (Environment.GetEnvironmentVariable("PORT") ?? "80"));
 }

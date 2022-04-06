@@ -10,8 +10,6 @@ RUN dotnet publish  "YelloServer/YelloServer.csproj" -c Release -o /app/publish
 
 # Build runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
-EXPOSE 5000 5001 80
 WORKDIR /app
 COPY --from=build-env /app/publish .
-CMD ASPNETCORE_URLS=http://*:$PORT dotnet YelloServer.dll
 ENTRYPOINT ["dotnet", "YelloServer.dll"]
