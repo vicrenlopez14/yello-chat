@@ -1,0 +1,5 @@
+C:\Users\vicre\Documents\Ricaldone\Software\Modulo-1\Yello\YelloChat\YelloWriter\bin\Release\net6.0\publish\YelloWriter.pdb
+C:\Users\vicre\Documents\Ricaldone\Software\Modulo-1\Yello\YelloChat\YelloWriter\bin\Release\net6.0\publish\Domain.pdb
+C:\Users\vicre\Documents\Ricaldone\Software\Modulo-1\Yello\YelloChat\YelloWriter\bin\Release\net6.0\publish\Infrastructure.pdb
+C:\Users\vicre\Documents\Ricaldone\Software\Modulo-1\Yello\YelloChat\YelloWriter\bin\Release\net6.0\publish\Application.pdb
+C:\Users\vicre\Documents\Ricaldone\Software\Modulo-1\Yello\YelloChat\YelloWriter\bin\Release\net6.0\publish\YelloWriter.exe
