@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "9dqyF2DKR0MQPHFM/Ex8E4qayDxJd7fWNWdYaWTYR7+aGxz2FK6350LvSS/rG3tepKH+YFBdJ+O9+H3HGUg/KQ==",
+  "dgSpecHash": "c4gH8McHVmAI6LGs3fqz0oB9hT0dhpsWoBWcNzGiVChURtbXzZUhQnykS5rHzuNPdzl+VRIiMGhVvF3CMU5RlQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\vicre\\Documents\\Ricaldone\\Software\\Modulo-1\\Yello\\YelloChat\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -34,7 +34,11 @@
     "C:\\Users\\vicre\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
     "C:\\Users\\vicre\\.nuget\\packages\\system.text.encodings.web\\7.0.0-preview.2.22152.2\\system.text.encodings.web.7.0.0-preview.2.22152.2.nupkg.sha512",
     "C:\\Users\\vicre\\.nuget\\packages\\system.text.json\\7.0.0-preview.2.22152.2\\system.text.json.7.0.0-preview.2.22152.2.nupkg.sha512",
-    "C:\\Users\\vicre\\.nuget\\packages\\system.threading.channels\\7.0.0-preview.2.22152.2\\system.threading.channels.7.0.0-preview.2.22152.2.nupkg.sha512"
+    "C:\\Users\\vicre\\.nuget\\packages\\system.threading.channels\\7.0.0-preview.2.22152.2\\system.threading.channels.7.0.0-preview.2.22152.2.nupkg.sha512",
+    "C:\\Users\\vicre\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\6.0.3\\microsoft.netcore.app.runtime.win-x64.6.0.3.nupkg.sha512",
+    "C:\\Users\\vicre\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\6.0.3\\microsoft.windowsdesktop.app.runtime.win-x64.6.0.3.nupkg.sha512",
+    "C:\\Users\\vicre\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\6.0.3\\microsoft.aspnetcore.app.runtime.win-x64.6.0.3.nupkg.sha512",
+    "C:\\Users\\vicre\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\6.0.3\\microsoft.netcore.app.crossgen2.win-x64.6.0.3.nupkg.sha512"
   ],
   "logs": []
 }

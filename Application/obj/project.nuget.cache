@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "B1utEOJLsFcX+LDB9n6AA23gRD2PnJ4CBV16LkaG1WLJyCIQ1q47Q/GYsn3MfSuc6mlHKraqevUlm4bFF35a3A==",
+  "dgSpecHash": "Y8XTrQSl2U+Uwz+Bvy8MM7xqgIqAUCrSZ+W9y9pJoxhgIBuusbfUfvUmJIaCWispQwFKO5WMX1wRvgdeQkXmPA==",
   "success": true,
   "projectFilePath": "C:\\Users\\vicre\\Documents\\Ricaldone\\Software\\Modulo-1\\Yello\\YelloChat\\Application\\Application.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\vicre\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\6.0.3\\microsoft.netcore.app.runtime.win-x64.6.0.3.nupkg.sha512",
+    "C:\\Users\\vicre\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\6.0.3\\microsoft.windowsdesktop.app.runtime.win-x64.6.0.3.nupkg.sha512",
+    "C:\\Users\\vicre\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\6.0.3\\microsoft.aspnetcore.app.runtime.win-x64.6.0.3.nupkg.sha512",
+    "C:\\Users\\vicre\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\6.0.3\\microsoft.netcore.app.crossgen2.win-x64.6.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

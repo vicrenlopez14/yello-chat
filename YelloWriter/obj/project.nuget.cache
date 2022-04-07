@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "X6vu9bIRTucNHctdjCVL8SsO8V38c+H3iivxCmLrKyAqdGVZP1D2ySsTcCx3oyptFQUQgn1lxiBUelcGVk+xRA==",
+  "dgSpecHash": "gpgRrJ/05oxNC5kxlvHPSSFUoCDhC52KL2KWmMdQzGjGame8lGkVGsW4iUyDd8ahGYj8L4HtSKbXPNXUVwwkbw==",
   "success": true,
   "projectFilePath": "C:\\Users\\vicre\\Documents\\Ricaldone\\Software\\Modulo-1\\Yello\\YelloChat\\YelloWriter\\YelloWriter.csproj",
   "expectedPackageFiles": [
@@ -35,14 +35,18 @@
     "C:\\Users\\vicre\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
     "C:\\Users\\vicre\\.nuget\\packages\\system.text.encodings.web\\7.0.0-preview.2.22152.2\\system.text.encodings.web.7.0.0-preview.2.22152.2.nupkg.sha512",
     "C:\\Users\\vicre\\.nuget\\packages\\system.text.json\\7.0.0-preview.2.22152.2\\system.text.json.7.0.0-preview.2.22152.2.nupkg.sha512",
-    "C:\\Users\\vicre\\.nuget\\packages\\system.threading.channels\\7.0.0-preview.2.22152.2\\system.threading.channels.7.0.0-preview.2.22152.2.nupkg.sha512"
+    "C:\\Users\\vicre\\.nuget\\packages\\system.threading.channels\\7.0.0-preview.2.22152.2\\system.threading.channels.7.0.0-preview.2.22152.2.nupkg.sha512",
+    "C:\\Users\\vicre\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\6.0.3\\microsoft.netcore.app.runtime.win-x64.6.0.3.nupkg.sha512",
+    "C:\\Users\\vicre\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\6.0.3\\microsoft.windowsdesktop.app.runtime.win-x64.6.0.3.nupkg.sha512",
+    "C:\\Users\\vicre\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\6.0.3\\microsoft.aspnetcore.app.runtime.win-x64.6.0.3.nupkg.sha512",
+    "C:\\Users\\vicre\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\6.0.3\\microsoft.netcore.app.crossgen2.win-x64.6.0.3.nupkg.sha512"
   ],
   "logs": [
     {
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'RandomNameGenerator 1.0.4' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "message": "El paquete \"RandomNameGenerator 1.0.4\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\" en lugar de la plataforma de destino del proyecto \"net6.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
       "libraryId": "RandomNameGenerator",
       "targetGraphs": [
         "net6.0"
