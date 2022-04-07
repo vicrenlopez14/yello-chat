@@ -16,7 +16,7 @@ public class ColorMappings
         {ConsoleColor.Magenta, 10},
         {ConsoleColor.Red, 11},
         {ConsoleColor.White, 12},
-        {ConsoleColor.Yellow, 13},
+        {ConsoleColor.Yellow, 13}
     };
 
     public static Dictionary<int, ConsoleColor> CodeToConsole = new Dictionary<int, ConsoleColor>

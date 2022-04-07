@@ -10,16 +10,20 @@ class Program
 {
     public static async Task Main(string[] args)
     {
-        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.ForegroundColor = ConsoleColor.Red;
         Console.WriteLine("YelloReader");
         Console.ForegroundColor = ConsoleColor.Blue;
-        Console.WriteLine("Lector de mensajes de las salas de YelloChat, ingrese el nombre de la sala y podrá ver los mensajes. Asegúrese de hacer coincidir mayúsculas y minúsculas.");
-        
+        Console.WriteLine(
+            "Lector de mensajes de las salas de YelloChat, ingrese el nombre de la sala y podrá ver los mensajes. Asegúrese de hacer coincidir mayúsculas y minúsculas.\n");
+
         // RODRIGO-MADE
 
         // Room data input
         Console.Write("Ingrese el nombre de la sala a la que quiere unirse (\"general\" por defecto): ");
+        Console.ForegroundColor = ConsoleColor.Yellow;
         string roomName = Console.ReadLine() ?? "general";
+        Console.ForegroundColor = ConsoleColor.White;
+
 
         var messager = new ConnectionHubMessager();
 
