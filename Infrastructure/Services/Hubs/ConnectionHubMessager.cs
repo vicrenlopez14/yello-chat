@@ -13,7 +13,7 @@ public class ConnectionHubMessager : IConnectionProvider
     {
         Hub = new HubConnectionBuilder().WithUrl($"{ServerRoutes.SERVER_HOST}/{ServerRoutes.CHAT_ROOMS}")
             .Build();
-        
+
         EstablishConnection();
     }
 

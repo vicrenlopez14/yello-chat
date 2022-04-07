@@ -68,9 +68,16 @@ class Program
     // REBECA-MADE
     static (String, ConsoleColor) GetUsernameAndColor()
     {
+        int color = 1;
+
         // Username input
         Console.Write("Ingrese el nombre de usuario con el que desea identificarse: ");
         string user = Console.ReadLine() ?? NameGenerator.Generate(Gender.Male);
+
+        if (user.Length == 0)
+        {
+            user = NameGenerator.Generate(Gender.Female);
+        }
 
         Console.Write("Su nombre de usuario es: " + user);
 
@@ -92,8 +99,16 @@ class Program
 
         color_input:
         Console.Write("Opción: ");
+        try
+        {
+            color = int.Parse(Console.ReadLine() ?? "1");
+        }
+        catch
+        {
+            Console.WriteLine("Por favor escribe un número válido.");
+            goto color_input;
+        }
 
-        int color = int.Parse(Console.ReadLine() ?? "1");
 
         if (!(color is >= 1 and <= 13))
         {

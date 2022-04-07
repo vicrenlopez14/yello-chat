@@ -16,6 +16,7 @@
 
     <ItemGroup>
       <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="7.0.0-preview.2.22153.2" />
+      <PackageReference Include="MongoDB.Driver" Version="2.15.0" />
     </ItemGroup>
     
 

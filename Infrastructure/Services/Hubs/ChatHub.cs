@@ -1,48 +1,68 @@
-﻿using System.Text.Json;
-using Application.Common.Interfaces;
+﻿using Application.Common.Interfaces;
 using Domain.Entities;
 using Infrastructure.Services.Common;
 using Microsoft.AspNetCore.SignalR;
 
-namespace Infrastructure.Services.Hubs
+
+namespace Infrastructure.Services.Hubs;
+
+public class ChatHub : Hub, IChatRoomsHandler
 {
-    public class ChatHub : Hub, IChatRoomsHandler
+    private static readonly List<Message> Messages = new();
+    private static readonly JsonMessageSerializer Serializer = new();
+
+    [HubMethodName("SendMessage")]
+    public async Task SendMessage(string message)
     {
-        private static JsonMessageSerializer serializer = new();
+        // Serialize to extract group name
+        var deserializedMessage = Serializer.Deserialize(message);
+        string roomName = deserializedMessage?.Room ?? "general";
 
-        [HubMethodName("SendMessage")]
-        public async Task SendMessage(string message)
+        // Preserve the message
+        Messages.Add(deserializedMessage!);
+
+        await Clients.Group(roomName).SendAsync(MessageMethod.RECEIVE_MESSAGE, message);
+    }
+
+    [HubMethodName("JoinToRoom")]
+    public async Task AddToRoom(string groupName, string userName)
+    {
+        Console.WriteLine($"JOIN TO GROUP {groupName}");
+        await Groups.AddToGroupAsync(Context.ConnectionId, groupName);
+
+        var newMessage = new Message($"{userName} has joined the room.", 11, groupName, DateTimeService.Now,
+            ">>>YELLO-ADMIN<<<");
+
+        await ResendAllMessages(Context.UserIdentifier, groupName);
+
+        await Clients.Group(groupName).SendAsync(MessageMethod.RECEIVE_MESSAGE, newMessage);
+    }
+
+    [HubMethodName("RemoveFromRoom")]
+    public async Task RemoveFromRoom(string groupName, string userName)
+    {
+        Console.WriteLine("EXIT FROM GROUP");
+
+        await Groups.RemoveFromGroupAsync(Context.ConnectionId, groupName);
+
+        var newMessage = new Message($"{userName} has left the room.", 11, groupName, DateTimeService.Now,
+            ">>>YELLO-ADMIN<<<");
+
+        await Clients.Group(groupName).SendAsync(MessageMethod.RECEIVE_MESSAGE, newMessage);
+    }
+
+    private async Task ResendAllMessages(string? userId, String groupName)
+    {
+        var missedMessages = from message in Messages
+            where message.Room == groupName
+            orderby message.Created
+            select message;
+
+        foreach (var message in missedMessages)
         {
-            // Serialize to extract group name
-            var deserialized = serializer.Deserialize(message);
-            string roomName = deserialized?.Room ?? "general";
+            var serializedMessage = Serializer.Serialize(message);
 
-            await Clients.Group(roomName).SendAsync(MessageMethod.RECEIVE_MESSAGE, message);
-        }
-
-        [HubMethodName("JoinToRoom")]
-        public async Task AddToRoom(string groupName, string userName)
-        {
-            Console.WriteLine($"JOIN TO GROUP {groupName}");
-            await Groups.AddToGroupAsync(Context.ConnectionId, groupName);
-
-            var newMessage = new Message($"{userName} has joined the room.", 11, groupName, DateTimeService.Now,
-                ">>>YELLO-ADMIN<<<");
-
-            await Clients.Group(groupName).SendAsync(MessageMethod.RECEIVE_MESSAGE, newMessage);
-        }
-
-        [HubMethodName("RemoveFromRoom")]
-        public async Task RemoveFromRoom(string groupName, string userName)
-        {
-            Console.WriteLine("EXIT FROM GROUP");
-
-            await Groups.RemoveFromGroupAsync(Context.ConnectionId, groupName);
-
-            var newMessage = new Message($"{userName} has left the room.", 11, groupName, DateTimeService.Now,
-                ">>>YELLO-ADMIN<<<");
-
-            await Clients.Group(groupName).SendAsync(MessageMethod.RECEIVE_MESSAGE, newMessage);
+            await Clients.Client(Context.ConnectionId).SendAsync(MessageMethod.RECEIVE_MESSAGE, serializedMessage);
         }
     }
 }

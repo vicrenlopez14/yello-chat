@@ -1,10 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Infrastructure",
-    "\\Infrastructure\\Services",
-    "\\Infrastructure\\Services\\Hubs"
+    "\\YelloReader",
+    "\\YelloWriter"
   ],
-  "SelectedNode": "\\Infrastructure",
+  "SelectedNode": "\\YelloWriter\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
