@@ -378,3 +378,13 @@ C:\Users\vicre\Documents\Ricaldone\Software\Modulo-1\Yello\YelloChat\YelloWriter
 C:\Users\vicre\Documents\Ricaldone\Software\Modulo-1\Yello\YelloChat\YelloWriter\obj\Release\net6.0\win-x64\YelloWriter.pdb
 C:\Users\vicre\Documents\Ricaldone\Software\Modulo-1\Yello\YelloChat\YelloWriter\obj\Release\net6.0\win-x64\YelloWriter.genruntimeconfig.cache
 C:\Users\vicre\Documents\Ricaldone\Software\Modulo-1\Yello\YelloChat\YelloWriter\obj\Release\net6.0\win-x64\ref\YelloWriter.dll
+C:\Users\vicre\Documents\Ricaldone\Software\Modulo-1\Yello\YelloChat\YelloWriter\bin\Release\net6.0\win-x64\DnsClient.dll
+C:\Users\vicre\Documents\Ricaldone\Software\Modulo-1\Yello\YelloChat\YelloWriter\bin\Release\net6.0\win-x64\MongoDB.Bson.dll
+C:\Users\vicre\Documents\Ricaldone\Software\Modulo-1\Yello\YelloChat\YelloWriter\bin\Release\net6.0\win-x64\MongoDB.Driver.dll
+C:\Users\vicre\Documents\Ricaldone\Software\Modulo-1\Yello\YelloChat\YelloWriter\bin\Release\net6.0\win-x64\MongoDB.Driver.Core.dll
+C:\Users\vicre\Documents\Ricaldone\Software\Modulo-1\Yello\YelloChat\YelloWriter\bin\Release\net6.0\win-x64\MongoDB.Libmongocrypt.dll
+C:\Users\vicre\Documents\Ricaldone\Software\Modulo-1\Yello\YelloChat\YelloWriter\bin\Release\net6.0\win-x64\SharpCompress.dll
+C:\Users\vicre\Documents\Ricaldone\Software\Modulo-1\Yello\YelloChat\YelloWriter\bin\Release\net6.0\win-x64\libzstd.dll
+C:\Users\vicre\Documents\Ricaldone\Software\Modulo-1\Yello\YelloChat\YelloWriter\bin\Release\net6.0\win-x64\snappy32.dll
+C:\Users\vicre\Documents\Ricaldone\Software\Modulo-1\Yello\YelloChat\YelloWriter\bin\Release\net6.0\win-x64\snappy64.dll
+C:\Users\vicre\Documents\Ricaldone\Software\Modulo-1\Yello\YelloChat\YelloWriter\bin\Release\net6.0\win-x64\mongocrypt.dll

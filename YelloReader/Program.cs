@@ -10,6 +10,11 @@ class Program
 {
     public static async Task Main(string[] args)
     {
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.WriteLine("YelloReader");
+        Console.ForegroundColor = ConsoleColor.Blue;
+        Console.WriteLine("Lector de mensajes de las salas de YelloChat, ingrese el nombre de la sala y podrá ver los mensajes. Asegúrese de hacer coincidir mayúsculas y minúsculas.");
+        
         // RODRIGO-MADE
 
         // Room data input
@@ -21,17 +26,24 @@ class Program
         await messager.JoinToRoom("reader", roomName);
 
         Console.WriteLine("Conectado. Pulse enter para salir.");
-        messager.Hub.On(MessageMethod.RECEIVE_MESSAGE,
-            (string message) =>
-            {
-                // SUSAN MADE
-                var deserializedMessage = JsonSerializer.Deserialize<Message>(message);
+        try
+        {
+            messager.Hub.On(MessageMethod.RECEIVE_MESSAGE,
+                (string message) =>
+                {
+                    // SUSAN MADE
+                    var deserializedMessage = JsonSerializer.Deserialize<Message>(message);
 
-                Console.ForegroundColor = ColorMappings.CodeToConsole[deserializedMessage!.Color];
+                    Console.ForegroundColor = ColorMappings.CodeToConsole[deserializedMessage!.Color];
 
-                Console.WriteLine(deserializedMessage.Created.ToString("hh:mm tt") + "~ " +
-                                  deserializedMessage.CreatedBy + ":" + " " + deserializedMessage.Content);
-            });
+                    Console.WriteLine(deserializedMessage.Created.ToString("hh:mm tt") + "~ " +
+                                      deserializedMessage.CreatedBy + ":" + " " + deserializedMessage.Content);
+                });
+        }
+        catch
+        {
+            Console.WriteLine("No se ha podido establecer una conexión con el servidor, puede cerrar el programa.");
+        }
 
         Console.ReadKey();
     }
