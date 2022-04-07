@@ -2,9 +2,9 @@
 
 public class ServerRoutes
 {
-    // public static string SERVER_HOST = "https://yello-server.herokuapp.com";
+    public static string SERVER_HOST = "https://yello-server.herokuapp.com";
 
-    public static string SERVER_HOST = "http://localhost:80";
+    // public static string SERVER_HOST = "http://localhost:80";
 
 
     // ReSharper disable once InconsistentNaming

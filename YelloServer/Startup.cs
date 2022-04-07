@@ -8,6 +8,7 @@ namespace YelloServer;
 
 public class Startup
 {
+    // Init startup
     public Startup(IConfiguration configuration)
     {
         Configuration = configuration;
@@ -15,6 +16,7 @@ public class Startup
 
     public IConfiguration Configuration { get; }
 
+    // Add SignalR to services 
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddSignalR();

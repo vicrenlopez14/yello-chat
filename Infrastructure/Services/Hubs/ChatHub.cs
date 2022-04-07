@@ -27,13 +27,15 @@ public class ChatHub : Hub, IChatRoomsHandler
     [HubMethodName("JoinToRoom")]
     public async Task AddToRoom(string groupName, string userName)
     {
-        Console.WriteLine($"JOIN TO GROUP {groupName}");
+        Console.WriteLine($"JOIN TO GROUP {groupName} by {userName}");
         await Groups.AddToGroupAsync(Context.ConnectionId, groupName);
 
+        // Create new warning message
         var newMessage = new Message($"{userName} has joined the room.", 11, groupName, DateTimeService.Now,
             ">>>YELLO-ADMIN<<<");
 
-        await ResendAllMessages(Context.UserIdentifier, groupName);
+        // Resending order
+        await ResendAllMessages(groupName);
 
         await Clients.Group(groupName).SendAsync(MessageMethod.RECEIVE_MESSAGE, newMessage);
     }
@@ -43,6 +45,7 @@ public class ChatHub : Hub, IChatRoomsHandler
     {
         Console.WriteLine("EXIT FROM GROUP");
 
+        // Remove from group
         await Groups.RemoveFromGroupAsync(Context.ConnectionId, groupName);
 
         var newMessage = new Message($"{userName} has left the room.", 11, groupName, DateTimeService.Now,
@@ -51,13 +54,15 @@ public class ChatHub : Hub, IChatRoomsHandler
         await Clients.Group(groupName).SendAsync(MessageMethod.RECEIVE_MESSAGE, newMessage);
     }
 
-    private async Task ResendAllMessages(string? userId, String groupName)
+    private async Task ResendAllMessages(String groupName)
     {
+        // Getting the messages with the same group destination
         var missedMessages = from message in Messages
             where message.Room == groupName
             orderby message.Created
             select message;
 
+        // Resending each message
         foreach (var message in missedMessages)
         {
             var serializedMessage = Serializer.Serialize(message);

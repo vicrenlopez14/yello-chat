@@ -79,7 +79,7 @@ class Program
             user = NameGenerator.Generate(Gender.Female);
         }
 
-        Console.Write("Su nombre de usuario es: " + user);
+        Console.WriteLine("Su nombre de usuario es: " + user);
 
         // Color input
         Console.WriteLine("Elija una opción para el color de sus mensajes: ");
@@ -99,6 +99,8 @@ class Program
 
         color_input:
         Console.Write("Opción: ");
+        
+        // Handle parse type exceptions
         try
         {
             color = int.Parse(Console.ReadLine() ?? "1");
@@ -109,13 +111,14 @@ class Program
             goto color_input;
         }
 
-
+        // Verify the color is valid
         if (!(color is >= 1 and <= 13))
         {
             Console.WriteLine("Color inválido, intente de nuevo.");
             goto color_input;
         }
 
+        // Map the color code to ConsoleColor object
         return (user, ColorMappings.CodeToConsole[color]);
     }
 }
