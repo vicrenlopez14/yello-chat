@@ -1,12 +1,16 @@
-﻿namespace Domain.Entities;
+﻿using System.Diagnostics;
+
+namespace Domain.Entities;
 
 public class ServerRoutes
 {
-    public static string SERVER_HOST = "https://yello-server.herokuapp.com";
-
-    // public static string SERVER_HOST = "http://localhost:80";
+    // ReSharper disable once InconsistentNaming
+    public static readonly string SERVER_HOST =
+        Debugger.IsAttached
+            ? "http://localhost:80"
+            : "https://yello-server.herokuapp.com";
 
 
     // ReSharper disable once InconsistentNaming
-    public static string CHAT_ROOMS = "chatrooms";
+    public static readonly string CHAT_ROOMS = "chatrooms";
 }
